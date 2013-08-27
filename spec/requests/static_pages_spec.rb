@@ -56,7 +56,4 @@ let(:base_title) { "Ruby on Rails Tutorial Sample App" }
       expect(page).to have_title("#{base_title} | Contact Us")
     end
   end
-  
-  
-  
 end
