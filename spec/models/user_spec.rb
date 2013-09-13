@@ -8,6 +8,10 @@ describe User do
   end
 
   subject { @user }
+  	describe "remember token" do
+	    before { @user.save }
+	    its(:remember_token) { should_not be_blank }
+	end
 
   it { should respond_to(:name) }
   it { should respond_to(:email) }
@@ -95,4 +99,13 @@ describe User do
 	  before { @user.password = @user.password_confirmation = "a" * 5 }
 	  it { should be_invalid }
 	end
+
+
+	it { should respond_to(:password_confirmation) }
+ 	it { should respond_to(:remember_token) }
+ 	it { should respond_to(:authenticate) }
+
+
+
+
 end
